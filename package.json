@@ -111,7 +111,7 @@
     "test-deploy": "npm run build; rm -r ../wick-site/public/test; mkdir ../wick-site/public/test; cp -r build/* ../wick-site/public/test; cd ../wick-site/public/test; rm CNAME; echo 'wickeditor.com/test/' > CNAME; git add .; git commit -m 'update prerelease build'; git push --force;",
     "prerelease-deploy": "npm run build; cp -r build/* ../wick-editor-prerelease/; cd ../wick-editor-prerelease; rm CNAME; echo 'test.wickeditor.com' > CNAME; git add .; git commit -m 'update prerelease build'; git push --force;",
     "deploy": "gh-pages -d build -a",
-    "deploy-subpage": "set PUBLIC_URL=/wick-editor/test&react-scripts build&gh-pages -d build --dest test",
+    "deploy-subpage": "set PUBLIC_URL=/wick-editor/%npm_config_pagename%&react-scripts build&gh-pages -d build --dest %npm_config_pagename%",
     "electron": "electron .",
     "electron-dev-macos": "ELECTRON_START_URL=http://localhost:3000 electron .",
     "electron-dev-windows": "set ELECTRON_START_URL=http://localhost:3000 && electron .",
