@@ -54,7 +54,7 @@ class Toolbox extends Component {
       brushes: {active: 'brush', options: ['brush', 'pencil']},
       eraser: 'eraser',
       shapes: {active: 'rectangle', options: ['rectangle', 'ellipse', 'line', 'text']},
-      tools: {active: 'fillbucket', options: ['fillbucket', 'eyedropper']}
+      tools: {active: 'fillbucket', options: ['fillbucket', 'eyedropper', 'gradienttool']}
     }
   }
 
@@ -101,6 +101,7 @@ class Toolbox extends Component {
         <ToolButton {...this.toolButtonProps} keyMap={this.props.keyMap} name='text' tooltip="Text" />
         <ToolButton {...this.toolButtonProps} keyMap={this.props.keyMap} name='fillbucket' tooltip="Fill Bucket" />
         <ToolButton {...this.toolButtonProps} keyMap={this.props.keyMap} name='eyedropper' tooltip="Eyedropper" />
+        <ToolButton {...this.toolButtonProps} keyMap={this.props.keyMap} name='gradienttool' tooltip="Gradient Tool" />
       </div>
     )
   }
@@ -180,9 +181,11 @@ class Toolbox extends Component {
           getToolSettingRestrictions={this.props.getToolSettingRestrictions}
           toggleBrushModes={this.props.toggleBrushModes}
           toggleCursorTransformModes={this.props.toggleCursorTransformModes}
+          toggleGradientToolModes={this.props.toggleGradientToolModes}
           showCanvasActions={this.props.showCanvasActions}
           showBrushModes={this.props.showBrushModes}
           showCursorTransformModes={this.props.showCursorTransformModes}
+          showGradientToolModes={this.props.showGradientToolModes}
         />
 
         {this.renderCanvasActions()}
@@ -208,9 +211,11 @@ class Toolbox extends Component {
             getToolSettingRestrictions={this.props.getToolSettingRestrictions}
             toggleBrushModes={this.props.toggleBrushModes}
             toggleCursorTransformModes={this.props.toggleCursorTransformModes}
+            toggleGradientToolModes={this.props.toggleGradientToolModes}
             showCanvasActions={this.props.showCanvasActions}
             showBrushModes={this.props.showBrushModes}
-            showCursorTransformModes={this.props.showCursorTransformModes}/>
+            showCursorTransformModes={this.props.showCursorTransformModes}
+            showGradientToolModes={this.props.showGradientToolModes}/>
             {this.renderCanvasActions()}
         </div>
 
@@ -237,9 +242,11 @@ class Toolbox extends Component {
             getToolSettingRestrictions={this.props.getToolSettingRestrictions}
             toggleBrushModes={this.props.toggleBrushModes}
             toggleCursorTransformModes={this.props.toggleCursorTransformModes}
+            toggleGradientToolModes={this.props.toggleGradientToolModes}
             showCanvasActions={this.props.showCanvasActions}
             showBrushModes={this.props.showBrushModes}
-            showCursorTransformModes={this.props.showCursorTransformModes}/>
+            showCursorTransformModes={this.props.showCursorTransformModes}
+            showGradientToolModes={this.props.showGradientToolModes}/>
         </div>
 
       </div>
