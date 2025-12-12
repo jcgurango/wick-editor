@@ -116,6 +116,7 @@ class MobileInspector extends Component {
       style: { label: 'style', icon: styleIcon, iconActive: styleIconActive, iconAlt: "style icon" },
       font:  { label: 'font', icon: fontIcon, iconActive: fontIconActive, iconAlt: "font icon" },
       frameSettings: { label: 'frameSettings', icon: settingsIcon, iconActive: settingsIconActive, iconAlt: "setting icon" },
+      layerSettings: { label: 'layerSettings', icon: settingsIcon, iconActive: settingsIconActive, iconAlt: "setting icon" },
       tweenSettings: { label: 'tweenSsettings', icon: settingsIcon, iconActive: settingsIconActive, iconAlt: "setting icon" },
       animationSettings: { label: 'animationSettings', icon: settingsIcon, iconActive: settingsIconActive, iconAlt: "setting icon" },
       assetSettings: { label: 'assetSettings', icon: settingsIcon, iconActive: settingsIconActive, iconAlt: "setting icon" }, 
@@ -126,7 +127,7 @@ class MobileInspector extends Component {
     
     this.inspectorTabs = {
       "frame": ['frameSettings', 'identifier'],
-      "layer": ['identifier'],
+      "layer": ['layerSettings', 'identifier'],
       "multiframe": [], // just name
       "multilayer": [],
       "tween": ['tweenSettings'],
@@ -679,6 +680,18 @@ class MobileInspector extends Component {
     )
   }
 
+  /**
+   * Renders the inspector view for all properties of a layer.
+   */
+  renderLayer = () => {
+    return (
+      <div className="inspector-content">
+        {/* {this.renderIdentifier()} */}
+        {this.renderOpacity()}
+      </div>
+    );
+  }
+
   renderTweenEasingType = () => {
     let options = window.Wick.Tween.VALID_EASING_TYPES;
     let optionLabels = [];
@@ -963,6 +976,7 @@ class MobileInspector extends Component {
             {tabNames.includes('style') && <Fragment>{this.renderSelectionColor()}</Fragment>}
             {tabNames.includes('font') && <Fragment>{this.renderFontContent()}</Fragment>}
             {tabNames.includes('frameSettings') && <Fragment>{this.renderFrame()}</Fragment>}
+            {tabNames.includes('layerSettings') && <Fragment>{this.renderLayer()}</Fragment>}
             {tabNames.includes('tweenSettings') && <Fragment>{this.renderTween()}</Fragment>}
             {tabNames.includes('animationSettings') && <Fragment>{this.renderAnimationSetting()}</Fragment>}
             {tabNames.includes('assetSettings') && <Fragment>{this.renderAsset()}</Fragment>}

@@ -754,6 +754,7 @@ class Inspector extends Component {
     return  (
       <div className="inspector-content">
         {this.renderName()}
+        {this.renderOpacity()}
       </div>
     )
   }
