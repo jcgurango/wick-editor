@@ -24,6 +24,9 @@ The Wick Editor is a free and open-source tool for creating games, animations, a
 
 <p align="center"><img width="100%" src=".github/images/editor.svg"></p>
 
+## About this Fork
+I want to use Wick Editor within the context of creating animations for video. I think the workflow and paradigms would work very in video. My primary video editor is Kdenlive.
+
 ## Getting started
 
 These instructions are for MacOS and Linux, we currently don't have instructions for Windows, but if you need help, please contact upstream!
@@ -39,7 +42,7 @@ You'll need to download the following:
 1) Clone this repository:
 
     ```bash
-    git clone https://github.com/StickmanRed/wick-editor.git
+    git clone https://github.com/jcgurango/wick-editor.git
     ```
 
 2) Using the command line, change directories into the newly created `wick-editor` folder:
